@@ -32,6 +32,34 @@ function loadView($name)
     }
 }
 
+
+function loadRenterView($name)
+{
+    $viewPath = basePath("views/renter/{$name}.view.php");
+
+    // inspect($viewPath);
+
+    if (file_exists($viewPath)) {
+        require $viewPath;
+    } else {
+        echo "View not found: {$name}.view.php";
+    }
+}
+
+function loadRenteeView($name)
+{
+    $viewPath = basePath("views/rentee/{$name}.view.php");
+
+    // inspect($viewPath);
+
+    if (file_exists($viewPath)) {
+        require $viewPath;
+    } else {
+        echo "View not found: {$name}.view.php";
+    }
+}
+
+
 /**
  * Load a partial
  * 
@@ -47,6 +75,42 @@ function loadPartial($name)
         require $partialPath;
     } else {
         echo "Partial not found: {$name}.php";
+    }
+}
+
+/**
+ * Load a Renter dashboards
+ * 
+ * @param string $name
+ * @return void
+ */
+
+function renterPartial($name)
+{
+    $partialPath = basePath("views/renter/partials/{$name}.php");
+
+    if (file_exists($partialPath)) {
+        require $partialPath;
+    } else {
+        echo "Renter Partial not found: {$name}.php";
+    }
+}
+
+/**
+ * Load a Rentee dashboards
+ * 
+ * @param string $name
+ * @return void
+ */
+
+function renteePartial($name)
+{
+    $partialPath = basePath("views/rentee/{$name}.php");
+
+    if (file_exists($partialPath)) {
+        require $partialPath;
+    } else {
+        echo "Renteee Partial not found: {$name}.php";
     }
 }
 

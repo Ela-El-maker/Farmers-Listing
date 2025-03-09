@@ -1,0 +1,3 @@
+<?php
+
+loadRenterView('renter/renter');

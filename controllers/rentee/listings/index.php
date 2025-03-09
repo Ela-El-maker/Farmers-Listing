@@ -1,0 +1,2 @@
+<?php
+loadRenteeView('listings/index');
